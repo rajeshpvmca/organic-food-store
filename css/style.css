@@ -113,6 +113,7 @@ body {
 @media (max-width: 576px) {
     .font-display-lg { font-size: 32px; }
     .thm-btn { width: 100%; text-align: center; } /* Full width buttons on mobile */
+    .thm-btn-secondary { width: 100%; text-align: center; }
 }
 
 .rounded-2xl {

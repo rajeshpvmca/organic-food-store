@@ -49,15 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Hero Content Slider
     new Swiper('.hero-content-slider', {
         loop: true,
+        speed: 1000, // Smooth transition speed
         autoplay: {
-            delay: 4000,
+            delay: 5000,
             disableOnInteraction: false,
         },
         effect: 'fade',
         fadeEffect: {
             crossFade: true
         },
-        allowTouchMove: false,
+        grabCursor: true,
+        allowTouchMove: true, // Enables swiping on mobile devices
     });
 
     // Initialize Testimonial Slider
