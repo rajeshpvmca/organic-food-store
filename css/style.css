@@ -767,6 +767,13 @@ body.dark-theme .hero-shape {
                 var(--background); /* Fallback to default background */
 }
 
+/* About Page Grand Section Background */
+.about-grand-section {
+    background: radial-gradient(circle at 20% 20%, rgba(65, 105, 0, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(249, 115, 22, 0.04) 0%, transparent 40%),
+                var(--background);
+}
+
 /* Testimonial Section Grand Background */
 .testimonial-grand-section {
     background: radial-gradient(circle at 50% 50%, rgba(65, 105, 0, 0.04) 0%, transparent 70%),

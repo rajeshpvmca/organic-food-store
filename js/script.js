@@ -47,41 +47,78 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Initialize Hero Content Slider
-    new Swiper('.hero-content-slider', {
-        loop: true,
-        speed: 1000, // Smooth transition speed
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        grabCursor: true,
-        allowTouchMove: true, // Enables swiping on mobile devices
-    });
+    if (document.querySelector('.hero-content-slider')) {
+        new Swiper('.hero-content-slider', {
+            loop: true,
+            speed: 1000,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            grabCursor: true,
+            allowTouchMove: true,
+        });
+    }
 
     // Initialize Testimonial Slider
-   new Swiper(".testimonial-slider",{
-        slidesPerView: 3,
-        spaceBetween: 30,
-        loop: true,
-        grabCursor: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            992: { slidesPerView: 3 }
-        }
-    });
+    if (document.querySelector('.testimonial-slider')) {
+        new Swiper(".testimonial-slider", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                320: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                992: { slidesPerView: 3 }
+            }
+        });
+    }
     
+    // Counter Animation Logic
+    const initCounters = () => {
+        const counters = document.querySelectorAll('.counter-value');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    if (!isNaN(target)) {
+                        animateValue(entry.target, 0, target, 2000);
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, { threshold: 0.1 }); // Lower threshold to trigger sooner
+
+        counters.forEach(counter => observer.observe(counter));
+    };
+
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    initCounters();
 });
