@@ -1,0 +1,52 @@
+/* About Page Custom Styles */
+
+.min-vh-50 {
+    min-height: 50vh !important;
+}
+
+/* About Image Styling with Signature Stackly Blob Background */
+.about-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    background: var(--secondary);
+    opacity: 0.08;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: 0;
+    animation: blobMorph 12s linear infinite;
+}
+
+@keyframes blobMorph {
+    0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    33% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+    66% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 40%; }
+}
+
+/* Philosophy Card Hover */
+.philosophy-card {
+    background-color: var(--surface-container-lowest);
+}
+
+.philosophy-card:hover {
+    border-color: var(--secondary) !important;
+}
+
+/* Stats Opacity Helper */
+.opacity-05 {
+    opacity: 0.05 !important;
+}
+
+/* Counter Styling */
+.bg-primary h3 {
+    font-size: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .bg-primary h3 {
+        font-size: 2.5rem;
+    }
+}

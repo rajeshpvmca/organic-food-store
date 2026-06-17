@@ -1,0 +1,99 @@
+/* Contact Page Specific Styles */
+
+/* Hero Banner Adjustment */
+.min-vh-50 {
+    min-height: 50vh !important;
+}
+
+/* Hero Banner Customization */
+.contact-hero-bg {
+    background: radial-gradient(circle at 10% 20%, rgba(65, 105, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+}
+
+/* Hero Shape Floating Animations */
+.hero-shape-6 { top: 60%; right: 5%; font-size: 40px; animation: heroFloat 12s ease-in-out infinite 1s reverse; }
+
+/* Contact Info Card Styling */
+.contact-card {
+    background-color: var(--surface-container-lowest);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover {
+    border-color: var(--secondary) !important;
+}
+
+.contact-card .contact-icon-box {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover .contact-icon-box {
+    background-color: var(--secondary) !important;
+    transform: rotateY(360deg);
+}
+
+.contact-card:hover .contact-icon-box .material-symbols-outlined {
+    color: white !important;
+}
+
+/* Form Wrapper Styles */
+.contact-form-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form-wrapper::before {
+    content: 'forum';
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 100px;
+    color: var(--primary);
+    opacity: 0.03;
+    z-index: -1;
+}
+
+/* Modern Input Styling */
+.input-modern-wrap {
+    position: relative;
+}
+
+.input-modern-wrap .form-control {
+    padding-left: 50px;
+    height: 55px;
+    border-radius: 1rem;
+    border: 1px solid var(--outline-variant);
+    background-color: var(--background);
+    transition: all 0.3s ease;
+}
+
+.input-modern-wrap textarea.form-control {
+    height: auto;
+    padding-top: 15px;
+}
+
+.input-modern-wrap .form-control:focus {
+    border-color: var(--secondary);
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(65, 105, 0, 0.05);
+}
+
+.input-modern-wrap .material-symbols-outlined {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    color: var(--primary);
+    font-size: 22px;
+}
+
+/* Map Container Hover Effect */
+.map-container iframe {
+    filter: grayscale(0.2) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.map-container:hover iframe {
+    filter: grayscale(0);
+}

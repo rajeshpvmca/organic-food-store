@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Blog | Stackly Organic Store</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body class="bg-background text-on-surface font-body-md">
+    
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 d-flex align-items-center min-vh-50 overflow-hidden">
+        <!-- Decorative Shapes -->
+        <span class="material-symbols-outlined hero-shape hero-shape-1">eco</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-2">menu_book</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-3">article</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-4">edit_note</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-5">potted_plant</span>
+
+        <div class="container position-relative z-1 pt-5">
+            <div class="text-center" data-aos="fade-up">
+                <div class="hero-badge mb-3">
+                    <span class="badge bg-accent rounded-pill me-2">LATEST</span>
+                    <span class="font-label-md text-primary text-uppercase fw-bold ls-2">Articles & News</span>
+                </div>
+                <h1 class="font-display-lg text-primary mb-4">Our <span class="text-secondary">Organic</span> Blog</h1>
+                <p class="font-body-lg mx-auto mb-0" style="max-width: 600px;">
+                    Discover tips for healthy living, organic farming insights, and the latest news from our store.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="py-3 bg-white border-bottom border-outline-variant">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active text-secondary fw-bold" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Main Blog List -->
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <!-- Blog Post 1 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-sm border border-outline-variant h-100 hover-shadow-premium">
+                                <div class="position-relative overflow-hidden group">
+                                    <img src="./assets/images/categories-1.webp" class="w-100 object-fit-cover transition-transform duration-500" style="height: 250px;" alt="Blog Post">
+                                    <div class="blog-date">
+                                        <span class="fw-bold d-block">12</span>
+                                        <small>JUN</small>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-3 font-label-sm">
+                                        <span class="text-secondary d-flex align-items-center gap-1"><i class="bi bi-person"></i> By Admin</span>
+                                        <span class="d-flex align-items-center gap-1"><i class="bi bi-tag"></i> Organic Foods</span>
+                                    </div>
+                                    <h3 class="font-headline-md text-primary mb-3">Health benefits of a raw food lifestyle</h3>
+                                    <p class="font-body-md mb-4">Discover how incorporating more raw, organic ingredients into your daily diet can boost your energy levels...</p>
+                                    <a href="#" class="text-secondary fw-bold text-decoration-none d-flex align-items-center gap-2 group">
+                                        Read More <i class="bi bi-arrow-right transition"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- Blog Post 2 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <article class="blog-card bg-white rounded-3xl overflow-hidden shadow-sm border border-outline-variant h-100 hover-shadow-premium">
+                                <div class="position-relative overflow-hidden group">
+                                    <img src="./assets/images/categories-2.webp" class="w-100 object-fit-cover transition-transform duration-500" style="height: 250px;" alt="Blog Post">
+                                    <div class="blog-date">
+                                        <span class="fw-bold d-block">08</span>
+                                        <small>JUN</small>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-3 font-label-sm">
+                                        <span class="text-secondary d-flex align-items-center gap-1"><i class="bi bi-person"></i> By Admin</span>
+                                        <span class="d-flex align-items-center gap-1"><i class="bi bi-tag"></i> Fresh Fruits</span>
+                                    </div>
+                                    <h3 class="font-headline-md text-primary mb-3">Top 5 summer fruits for hydration</h3>
+                                    <p class="font-body-md mb-4">Stay cool and hydrated this summer with these nutrient-packed organic fruits delivered right to your door...</p>
+                                    <a href="#" class="text-secondary fw-bold text-decoration-none d-flex align-items-center gap-2">
+                                        Read More <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav class="mt-5 py-4">
+                        <ul class="pagination justify-content-center gap-3 border-0">
+                            <li class="page-item"><a class="page-link rounded-circle border border-outline-variant bg-primary text-white shadow-sm d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle border border-outline-variant bg-white text-primary shadow-sm hover-shadow-premium d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle border border-outline-variant bg-white text-primary shadow-sm hover-shadow-premium d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="sidebar d-flex flex-column gap-4">
+                        <!-- Search -->
+                        <div class="bg-white p-4 rounded-3xl shadow-sm border border-outline-variant" data-aos="fade-left">
+                            <h4 class="font-headline-md text-primary mb-4">Search News</h4>
+                            <div class="input-group">
+                                <input type="text" class="form-control border-end-0 rounded-start-pill px-4 py-3" style="background: var(--background);" placeholder="Keywords...">
+                                <button class="btn bg-primary text-white rounded-end-pill px-4 btn-fill-top"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                        <!-- Categories -->
+                        <div class="bg-white p-4 rounded-3xl shadow-sm border border-outline-variant" data-aos="fade-left" data-aos-delay="100">
+                            <h4 class="font-headline-md text-primary mb-4">Categories</h4>
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                                <li><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center p-3 rounded-2xl border border-outline-variant hover-shadow-premium hover-text-secondary">Organic Fruits <span class="badge bg-primary-fixed text-primary rounded-pill px-3">05</span></a></li>
+                                <li><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center p-3 rounded-2xl border border-outline-variant hover-shadow-premium hover-text-secondary">Fresh Vegetables <span class="badge bg-primary-fixed text-primary rounded-pill px-3">08</span></a></li>
+                                <li><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center p-3 rounded-2xl border border-outline-variant hover-shadow-premium hover-text-secondary">Dried Foods <span class="badge bg-primary-fixed text-primary rounded-pill px-3">03</span></a></li>
+                                <li><a href="#" class="text-decoration-none d-flex justify-content-between align-items-center p-3 rounded-2xl border border-outline-variant hover-shadow-premium hover-text-secondary">Natural Spices <span class="badge bg-primary-fixed text-primary rounded-pill px-3">04</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Recent Posts -->
+                        <div class="bg-white p-4 rounded-3xl shadow-sm border border-outline-variant" data-aos="fade-left" data-aos-delay="200">
+                            <h4 class="font-headline-md text-primary mb-4">Recent Posts</h4>
+                            <div class="d-flex flex-column gap-3">
+                                <a href="#" class="d-flex align-items-center gap-3 text-decoration-none group">
+                                    <img src="./assets/images/hot-product-1.webp" class="rounded-xl object-fit-cover" style="width: 70px; height: 70px;" alt="Post">
+                                    <div>
+                                        <h6 class="text-primary font-label-md mb-1 group-hover-text-secondary transition">Healthy organic habits...</h6>
+                                        <span class="font-label-sm">June 12, 2024</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="d-flex align-items-center gap-3 text-decoration-none group">
+                                    <img src="./assets/images/hot-product-2.webp" class="rounded-xl object-fit-cover" style="width: 70px; height: 70px;" alt="Post">
+                                    <div>
+                                        <h6 class="text-primary font-label-md mb-1 group-hover-text-secondary transition">Summer fruit recipes...</h6>
+                                        <span class="font-label-sm">June 08, 2024</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

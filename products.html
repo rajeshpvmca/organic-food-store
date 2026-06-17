@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Shop | Stackly Organic Store</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 d-flex align-items-center min-vh-50 overflow-hidden">
+        <span class="material-symbols-outlined hero-shape hero-shape-1">spa</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-2">nutrition</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-3">shopping_basket</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-4">psychiatry</span>
+        <span class="material-symbols-outlined hero-shape hero-shape-5">compost</span>
+
+        <div class="container position-relative z-1 pt-5">
+            <div class="text-center" data-aos="fade-up">
+                <div class="hero-badge mb-3">
+                    <span class="badge bg-accent rounded-pill me-2">SHOP</span>
+                    <span class="font-label-md text-primary text-uppercase fw-bold ls-2">Organic Marketplace</span>
+                </div>
+                <h1 class="font-display-lg text-primary mb-4">Freshness in <span class="text-secondary">Every</span> Bite</h1>
+                <p class="font-body-lg mx-auto mb-0" style="max-width: 650px;">
+                    Explore our wide selection of certified organic products, harvested daily and delivered straight from the farm to your table.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="py-3 bg-white border-bottom border-outline-variant">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active text-secondary fw-bold" aria-current="page">Our Shop</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Sidebar -->
+                <aside class="col-lg-3">
+                    <div class="sticky-top" style="top: 100px;">
+                        <!-- Search -->
+                        <div class="sidebar-widget mb-4" data-aos="fade-up">
+                            <h4 class="font-headline-md text-primary mb-3">Search</h4>
+                            <div class="search-box position-relative">
+                                <input type="text" class="form-control rounded-pill px-4 py-2 border-outline-variant" placeholder="Find product...">
+                                <button class="btn text-primary position-absolute end-0 top-50 translate-middle-y me-2 border-0 bg-transparent">
+                                    <span class="material-symbols-outlined">search</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="sidebar-widget mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <h4 class="font-headline-md text-primary mb-3">Categories</h4>
+                            <ul class="list-unstyled d-flex flex-column gap-2">
+                                <li><a href="#" class="cat-link active">All Products <span>(48)</span></a></li>
+                                <li><a href="#" class="cat-link">Fresh Vegetables <span>(12)</span></a></li>
+                                <li><a href="#" class="cat-link">Organic Fruits <span>(15)</span></a></li>
+                                <li><a href="#" class="cat-link">Dairy & Eggs <span>(08)</span></a></li>
+                                <li><a href="#" class="cat-link">Natural Spices <span>(13)</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="sidebar-widget mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="font-headline-md text-primary mb-3">Filter by Price</h4>
+                            <input type="range" class="form-range custom-range" min="0" max="100" id="priceRange">
+                            <div class="d-flex justify-content-between mt-2 font-label-md">
+                                <span>$0</span>
+                                <span>$100</span>
+                            </div>
+                        </div>
+
+                        <!-- Popular Tags -->
+                        <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="300">
+                            <h4 class="font-headline-md text-primary mb-3">Trending Tags</h4>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#" class="tag-item">Healthy</a>
+                                <a href="#" class="tag-item">Vegan</a>
+                                <a href="#" class="tag-item">Fresh</a>
+                                <a href="#" class="tag-item">Organic</a>
+                                <a href="#" class="tag-item">Farm</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <main class="col-lg-9">
+                    <!-- Toolbar -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center bg-white p-3 rounded-2xl shadow-sm mb-4 border border-outline-variant" data-aos="fade-down">
+                        <p class="mb-0 font-label-md mb-2 mb-md-0">Showing 1–12 of 48 results</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <select class="form-select border-0 shadow-none font-label-md text-primary" style="width: auto; cursor: pointer;">
+                                <option selected>Default Sorting</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Average Rating</option>
+                            </select>
+                            <div class="d-flex gap-2 border-start ps-3 border-outline-variant">
+                                <button class="btn btn-sm text-primary p-0"><span class="material-symbols-outlined">grid_view</span></button>
+                                <button class="btn btn-sm p-0 opacity-50"><span class="material-symbols-outlined">view_list</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid -->
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                        <!-- Product 1 -->
+                        <div class="col" data-aos="fade-up">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
+                                <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
+                                    <img alt="Organic Bananas" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-1.webp" />
+                                    <div class="product-actions">
+                                        <button class="action-btn" title="Add to Wishlist"><span class="material-symbols-outlined">favorite</span></button>
+                                        <button class="action-btn" title="Quick View"><span class="material-symbols-outlined">visibility</span></button>
+                                    </div>
+                                    <span class="badge bg-accent position-absolute top-0 start-0 m-3 z-1">HOT</span>
+                                </div>
+                                <div class="px-2 flex-grow-1 text-center">
+                                    <div class="text-warning mb-2 small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                    </div>
+                                    <h3 class="font-headline-md text-primary mb-1">Organic Bananas</h3>
+                                    <p class="text-secondary fw-bold mb-3">$4.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$6.00</span></p>
+                                </div>
+                                <button class="thm-btn w-100 btn-fill-right mt-auto">
+                                    Add to cart <span class="material-symbols-outlined fs-6 ms-1">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col" data-aos="fade-up" data-aos-delay="100">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
+                                <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
+                                    <img alt="Organic Potatoes" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-2.webp" />
+                                    <div class="product-actions">
+                                        <button class="action-btn" title="Add to Wishlist"><span class="material-symbols-outlined">favorite</span></button>
+                                        <button class="action-btn" title="Quick View"><span class="material-symbols-outlined">visibility</span></button>
+                                    </div>
+                                </div>
+                                <div class="px-2 flex-grow-1 text-center">
+                                    <div class="text-warning mb-2 small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                    </div>
+                                    <h3 class="font-headline-md text-primary mb-1">Organic Potatoes</h3>
+                                    <p class="text-secondary fw-bold mb-3">$3.49 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$4.00</span></p>
+                                </div>
+                                <button class="thm-btn w-100 btn-fill-right mt-auto">
+                                    Add to cart <span class="material-symbols-outlined fs-6 ms-1">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col" data-aos="fade-up" data-aos-delay="200">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
+                                <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
+                                    <img alt="Organic Apples" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-3.webp" />
+                                    <div class="product-actions">
+                                        <button class="action-btn" title="Add to Wishlist"><span class="material-symbols-outlined">favorite</span></button>
+                                        <button class="action-btn" title="Quick View"><span class="material-symbols-outlined">visibility</span></button>
+                                    </div>
+                                    <span class="badge bg-primary position-absolute top-0 start-0 m-3 z-1">SALE</span>
+                                </div>
+                                <div class="px-2 flex-grow-1 text-center">
+                                    <div class="text-warning mb-2 small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <h3 class="font-headline-md text-primary mb-1">Organic Apples</h3>
+                                    <p class="text-secondary fw-bold mb-3">$5.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$7.50</span></p>
+                                </div>
+                                <button class="thm-btn w-100 btn-fill-right mt-auto">
+                                    Add to cart <span class="material-symbols-outlined fs-6 ms-1">add_shopping_cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Repeat for more content (Simulating many products) -->
+                        <!-- Using Category images as variety -->
+                        <div class="col" data-aos="fade-up">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant h-100 d-flex flex-column hover-shadow-premium">
+                                <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
+                                    <img alt="Fresh Bell Peppers" class="object-fit-cover transition-transform duration-500" src="./assets/images/categories-1.webp" />
+                                </div>
+                                <div class="px-2 flex-grow-1 text-center">
+                                    <h3 class="font-headline-md text-primary mb-1">Bell Peppers</h3>
+                                    <p class="text-secondary fw-bold mb-3">$2.99</p>
+                                </div>
+                                <button class="thm-btn w-100 btn-fill-right">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-5">
+                        <ul class="pagination justify-content-center gap-2 border-0">
+                            <li class="page-item"><a class="page-link rounded-circle border border-outline-variant bg-primary text-white shadow-sm d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle border border-outline-variant bg-white text-primary shadow-sm hover-shadow-premium d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle border border-outline-variant bg-white text-primary shadow-sm hover-shadow-premium d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

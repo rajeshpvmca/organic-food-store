@@ -1,0 +1,104 @@
+/* Products Page Specific Styles */
+
+/* Hero Banner Adjustment */
+.min-vh-50 {
+    min-height: 50vh !important;
+}
+
+/* Sidebar Styles */
+.sidebar-widget {
+    background-color: var(--surface-container-lowest);
+    padding: 24px;
+    border-radius: 1.5rem;
+    border: 1px solid var(--outline-variant);
+}
+
+.cat-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 0.75rem;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.cat-link:hover, .cat-link.active {
+    background-color: var(--primary-fixed);
+    color: var(--primary);
+}
+
+.cat-link span {
+    opacity: 0.6;
+    font-size: 0.85em;
+}
+
+.custom-range::-webkit-slider-thumb {
+    background: var(--secondary);
+}
+
+.tag-item {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: var(--background);
+    border: 1px solid var(--outline-variant);
+    border-radius: 50px;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.tag-item:hover {
+    background-color: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+/* Product Card Enhancements */
+.product-card .group img {
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .group img {
+    transform: scale(1.1);
+}
+
+.product-actions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.product-card:hover .product-actions {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.action-btn {
+    background: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: var(--secondary);
+    color: white;
+}
