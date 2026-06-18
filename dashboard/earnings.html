@@ -11,72 +11,46 @@
     <div class="container-fluid py-4">
         <div class="card-header-row">
             <div>
-                <h2 class="page-title">Earnings History</h2>
-                <p class="page-subtitle">Track your revenue and withdrawal history across the platform.</p>
+                <h2 class="page-title">Earnings Overview</h2>
+                <p class="page-subtitle">Track your daily income and delivery incentives.</p>
             </div>
-            <button class="btn-primary-dash">Request Payout</button>
+            <button class="btn-outline-dash btn-sm"><i class="fas fa-download me-2"></i>Statement</button>
         </div>
 
         <div class="grid-4 mb-4">
             <div class="stat-card">
-                <div class="stat-icon green"><i class="fas fa-hand-holding-usd"></i></div>
+                <div class="stat-icon green"><i class="fas fa-wallet"></i></div>
                 <div>
-                    <div class="stat-value">$154.20</div>
-                    <div class="stat-label">Daily Earnings</div>
+                    <div class="stat-value">₹850</div>
+                    <div class="stat-label">Today's Pay</div>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon orange"><i class="fas fa-calendar-week"></i></div>
+                <div class="stat-icon orange"><i class="fas fa-calendar-check"></i></div>
                 <div>
-                    <div class="stat-value">$845.00</div>
-                    <div class="stat-label">Weekly Earnings</div>
+                    <div class="stat-value">₹5,240</div>
+                    <div class="stat-label">This Week</div>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon blue"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="stat-icon blue"><i class="fas fa-gift"></i></div>
                 <div>
-                    <div class="stat-value">$4,210</div>
-                    <div class="stat-label">Total Lifetime</div>
+                    <div class="stat-value">₹300</div>
+                    <div class="stat-label">Incentives</div>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon purple"><i class="fas fa-university"></i></div>
+                <div class="stat-icon purple"><i class="fas fa-coins"></i></div>
                 <div>
-                    <div class="stat-value">$2,100</div>
-                    <div class="stat-label">Withdrawn</div>
+                    <div class="stat-value">₹1,200</div>
+                    <div class="stat-label">Pending Payout</div>
                 </div>
             </div>
-        </div>
-
-        <div class="content-card mb-4">
-            <h5 class="content-card-title">Earnings Performance (Current Week)</h5>
-            <canvas id="earningsChart" height="100"></canvas>
         </div>
 
         <div class="content-card">
-            <h5 class="content-card-title">Recent Payout Transactions</h5>
-            <div class="table-wrap">
-                <table class="dash-table">
-                    <thead>
-                        <tr>
-                            <th>Reference ID</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                            <th>Method</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#TXN-4921</td>
-                            <td>Oct 27, 2023</td>
-                            <td>$45.00</td>
-                            <td>Bank Transfer</td>
-                            <td><span class="status active">Completed</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h5 class="content-card-title">Daily Earnings Trend</h5>
+            <canvas id="earningsChart" height="100"></canvas>
         </div>
     </div>
 
@@ -87,13 +61,20 @@
             data: {
                 labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                 datasets: [{
-                    label: 'Earnings ($)',
-                    data: [120, 150, 100, 180, 200, 250, 220],
-                    backgroundColor: '#ffb22c',
+                    label: 'Earnings (₹)',
+                    data: [450, 600, 550, 800, 700, 950, 850],
+                    backgroundColor: '#154212',
                     borderRadius: 8
                 }]
             },
-            options: { responsive: true, plugins: { legend: { display: false } } }
+            options: { 
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
         });
     </script>
 </body>

@@ -10,44 +10,51 @@
     <div class="container-fluid py-4">
         <div class="card-header-row">
             <div>
-                <h2 class="page-title">Delivery Tasks</h2>
-                <p class="page-subtitle">Manage your active pickups and deliveries.</p>
+                <h2 class="page-title">Active Delivery Tasks</h2>
+                <p class="page-subtitle">Pick up fresh harvest from farms and deliver to customers.</p>
             </div>
-            <div class="status active px-3 py-2">Available for Pickup</div>
+            <div class="badge bg-success p-2 px-3 rounded-pill">Online & Ready</div>
         </div>
 
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="content-card h-100">
-                    <h5 class="content-card-title">Active Delivery: #FOD-92840</h5>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <div class="stat-icon orange"><i class="fas fa-utensils"></i></div>
-                        <div>
-                            <div class="fw-bold">Pickup: Burger King</div>
-                            <div class="small text-muted">123 Market St, Suite 5</div>
-                        </div>
+        <!-- Task Card 1 -->
+        <div class="content-card border-start border-4 border-primary shadow-sm mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge bg-primary-fixed text-primary">ID: #ORG-5501</span>
+                        <span class="status pending">In Progress</span>
                     </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <div class="stat-icon green"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <div class="fw-bold">Drop: John Doe</div>
-                            <div class="small text-muted">456 Residential Ave, Apt 12</div>
+                    <div class="row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                            <div class="small text-muted text-uppercase fw-bold mb-1">Pickup (Farm)</div>
+                            <div class="fw-bold text-primary"><i class="fas fa-seedling me-2"></i>Green Valley Organic Farm</div>
+                            <div class="small text-muted">Salem North, TN</div>
                         </div>
-                    </div>
-                    <div class="d-grid">
-                        <button class="btn-primary-dash py-3">Update Status: Picked Up</button>
+                        <div class="col-sm-6">
+                            <div class="small text-muted text-uppercase fw-bold mb-1">Delivery (Customer)</div>
+                            <div class="fw-bold text-secondary"><i class="fas fa-map-marker-alt me-2"></i>John Doe</div>
+                            <div class="small text-muted">Fairlands, Salem</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="content-card">
-                    <h5 class="content-card-title">Earnings Today</h5>
-                    <div class="stat-value">$84.50</div>
-                    <p class="stat-label">12 Deliveries Completed</p>
-                    <canvas id="earningsChart" height="100"></canvas>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <div class="mb-3">
+                        <span class="small text-muted d-block">Est. Earning</span>
+                        <span class="fw-bold h5 text-primary">₹85.00</span>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-md-end">
+                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3">View Map</button>
+                        <button class="btn-primary-dash btn-sm">Pick Up Done</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Empty State (Optional example) -->
+        <!-- <div class="empty-state">
+            <i class="fas fa-truck-loading"></i>
+            <p>No more active tasks. Take a break or wait for new orders!</p>
+        </div> -->
     </div>
 </body>
 </html>

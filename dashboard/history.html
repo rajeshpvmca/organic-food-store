@@ -11,10 +11,17 @@
         <div class="card-header-row">
             <div>
                 <h2 class="page-title">Delivery History</h2>
-                <p class="page-subtitle">A detailed log of all your completed journeys.</p>
+                <p class="page-subtitle">A detailed log of your organic farm-to-door deliveries.</p>
             </div>
             <div class="dropdown">
-                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button">Filter by Month</button>
+                <button class="btn btn-outline-dash btn-sm dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-calendar-alt me-1"></i> Filter by Month
+                </button>
+                <ul class="dropdown-menu shadow-sm border-outline-variant" aria-labelledby="filterDropdown">
+                    <li><a class="dropdown-item small" href="#">June 2024</a></li>
+                    <li><a class="dropdown-item small" href="#">May 2024</a></li>
+                    <li><a class="dropdown-item small" href="#">April 2024</a></li>
+                </ul>
             </div>
         </div>
 
@@ -23,27 +30,39 @@
                 <table class="dash-table">
                     <thead>
                         <tr>
-                            <th>Trip ID</th>
-                            <th>Restaurant</th>
-                            <th>Destination</th>
+                            <th>ID</th>
+                            <th>Farm / Pickup</th>
+                            <th>Customer Point</th>
                             <th>Distance</th>
-                            <th>Earned</th>
+                            <th>Payout</th>
                             <th>Rating</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="fw-bold">#TRP-772</td>
-                            <td>Pizza Hut (Main)</td>
-                            <td>Green Valley, Block C</td>
+                            <td class="fw-bold">#ID-772</td>
+                            <td><i class="fas fa-seedling text-primary me-2"></i>Green Valley Farm</td>
+                            <td>Fairlands, Block C</td>
                             <td>4.2 km</td>
-                            <td class="text-success fw-bold">$8.50</td>
+                            <td class="text-primary fw-bold">₹85.00</td>
                             <td><span class="text-warning"><i class="fas fa-star"></i> 5.0</span></td>
+                            <td><span class="status active">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">#ID-768</td>
+                            <td><i class="fas fa-seedling text-primary me-2"></i>Sunshine Orchards</td>
+                            <td>Salem North, Villa 12</td>
+                            <td>6.5 km</td>
+                            <td class="text-primary fw-bold">₹110.00</td>
+                            <td><span class="text-warning"><i class="fas fa-star"></i> 4.8</span></td>
+                            <td><span class="status active">Completed</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
