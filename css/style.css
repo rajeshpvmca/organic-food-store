@@ -348,7 +348,7 @@ body {
     display: inline-block;
     padding: 10px 30px;
     background-color: transparent;
-    color: var(--secondary) !important;
+    color: var(--secondary);
     border: 2px solid var(--secondary);
     border-radius: 50px;
     font-family: var(--font-body);
