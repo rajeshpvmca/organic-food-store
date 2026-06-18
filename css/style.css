@@ -780,4 +780,17 @@ body.dark-theme .hero-shape {
                 linear-gradient(180deg, var(--surface-container-low) 0%, var(--background) 100%);
     position: relative;
 }
+
+/* Footer Payment Icons Styling */
+.payment-icon {
+    font-size: 24px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    color: var(--on-primary);
+}
+.payment-icon:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: var(--secondary);
+}
 }
