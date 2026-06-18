@@ -165,3 +165,65 @@
 .process-card:hover h4 {
     color: var(--secondary) !important;
 }
+
+/* Mission & Vision Section Enhancements */
+
+.mv-card {
+    background-color: var(--surface-container-lowest);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-width: 2px !important;
+}
+
+.mv-card .icon-box {
+    width: 70px;
+    height: 70px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mv-card .card-bg-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 150px !important;
+    opacity: 0.03;
+    color: var(--primary);
+    transform: rotate(-15deg);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.mv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(21, 66, 18, 0.08) !important;
+}
+
+.mission-card:hover {
+    border-color: var(--secondary) !important;
+}
+
+.vision-card:hover {
+    border-color: var(--accent) !important;
+}
+
+.mv-card:hover .card-bg-icon {
+    transform: rotate(0deg) scale(1.1);
+    opacity: 0.06;
+    color: inherit;
+}
+
+.mission-card:hover .icon-box {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(65, 105, 0, 0.2);
+}
+
+.vision-card:hover .icon-box {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(249, 115, 22, 0.2);
+}
+
+@media (max-width: 768px) {
+    .mv-card {
+        padding: 2.5rem 1.5rem !important;
+    }
+}
