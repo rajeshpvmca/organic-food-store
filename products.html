@@ -130,7 +130,7 @@
                     </div>
 
                     <!-- Grid -->
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                    <div id="productGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                         <!-- Product 1 (Bananas - HOT) -->
                         <div class="col" data-aos="fade-up" data-category="fruits">
                             <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
@@ -221,7 +221,9 @@
                                     </div>
                                     <p class="text-primary fw-bold mb-3 fs-5">$3.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$5.50</span></p>
                                 </div>
-                                <a href="404.html" class="thm-btn w-100 btn-fill-right mt-auto">Add to cart</a>
+                                 <a href="404.html" class="thm-btn w-100 btn-fill-right mt-auto">
+                                    Add to cart <i class="bi bi-cart-plus ms-1"></i>
+                                </a>
                             </div>
                         </div>
 
@@ -243,7 +245,9 @@
                                     </div>
                                     <p class="text-primary fw-bold mb-3 fs-5">$12.49</p>
                                 </div>
-                                <a href="404.html" class="thm-btn w-100 btn-fill-right mt-auto">Add to cart</a>
+                                 <a href="404.html" class="thm-btn w-100 btn-fill-right mt-auto">
+                                    Add to cart <i class="bi bi-cart-plus ms-1"></i>
+                                </a>
                             </div>
                         </div>
 
@@ -300,7 +304,7 @@
             const productSearchInput = document.getElementById('productSearchInput');
             const productCards = document.querySelectorAll('.product-card');
             const categoryLinks = document.querySelectorAll('.cat-link');
-            const productGrid = document.querySelector('.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-4');
+            const productGrid = document.getElementById('productGrid');
             const productCountText = document.getElementById('productCountText');
             const sortSelect = document.getElementById('sortSelect');
             const gridViewBtn = document.getElementById('gridViewBtn');
@@ -387,15 +391,13 @@
             // View toggle logic
             if (gridViewBtn && listViewBtn) {
                 gridViewBtn.addEventListener('click', () => {
-                    productGrid.classList.remove('row-cols-1');
-                    productGrid.classList.add('row-cols-sm-2', 'row-cols-md-3');
+                    productGrid.classList.remove('list-view-active');
                     gridViewBtn.classList.add('text-primary'); gridViewBtn.classList.remove('opacity-50');
                     listViewBtn.classList.add('opacity-50'); listViewBtn.classList.remove('text-primary');
                 });
 
                 listViewBtn.addEventListener('click', () => {
-                    productGrid.classList.add('row-cols-1');
-                    productGrid.classList.remove('row-cols-sm-2', 'row-cols-md-3');
+                    productGrid.classList.add('list-view-active');
                     listViewBtn.classList.add('text-primary'); listViewBtn.classList.remove('opacity-50');
                     gridViewBtn.classList.add('opacity-50'); gridViewBtn.classList.remove('text-primary');
                 });
