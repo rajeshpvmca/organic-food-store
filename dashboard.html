@@ -135,37 +135,29 @@
             <img src="assets/images/logoStackly.webp" alt="Logo" style="height: 40px; filter: brightness(0) invert(1);">
         </div>
         <div class="sidebar-nav">
-            <div id="navFoodie">
-                <a href="dashboard/home.html" class="nav-item-dash active" data-page="home"><i class="fas fa-th-large"></i> Home</a>
+            <div id="navCustomer" style="display:none">
+                <a href="dashboard/home.html" class="nav-item-dash active" data-page="home"><i class="fas fa-leaf"></i> Home</a>
                 <a href="dashboard/orders.html" class="nav-item-dash" data-page="orders"><i class="fas fa-shopping-bag"></i> My Orders</a>
                 <a href="dashboard/trackOrder.html" class="nav-item-dash" data-page="trackOrder"><i class="fas fa-map-marker-alt"></i> Track Order</a>
                 <a href="dashboard/reviews.html" class="nav-item-dash" data-page="reviews"><i class="fas fa-star"></i> My Reviews</a>
                 <a href="dashboard/favorites.html" class="nav-item-dash" data-page="favorites"><i class="fas fa-heart"></i> Favorites</a>
                 <a href="dashboard/wallet.html" class="nav-item-dash" data-page="wallet"><i class="fas fa-wallet"></i> Wallet & Payments</a>
-
-                <p class="text-white-50">Account</p>
-                <a href="dashboard/profile.html" class="nav-item-dash" data-page="profile"><i class="fas fa-user"></i> Profile</a>
-                <a href="dashboard/settings.html" class="nav-item-dash" data-page="settings"><i class="fas fa-cog"></i> Settings</a>
-            
             </div>
-            <div id="navDelivery" style="display:none">
-                <a href="dashboard/tasks.html" class="nav-item-dash" data-page="tasks"><i class="fas fa-motorcycle"></i> Active Tasks</a>
+            <div id="navPartner" style="display:none">
+                <a href="dashboard/tasks.html" class="nav-item-dash" data-page="tasks"><i class="fas fa-truck"></i> Active Tasks</a>
                 <a href="dashboard/earnings.html" class="nav-item-dash" data-page="earnings"><i class="fas fa-wallet"></i> Earnings</a>
                 <a href="dashboard/history.html" class="nav-item-dash" data-page="history"><i class="fas fa-history"></i> Delivery History</a>
-                <p class="text-white-50">Account</p>
-                <a href="dashboard/profile.html" class="nav-item-dash" data-page="profile"><i class="fas fa-user"></i> Profile</a>
-                <a href="dashboard/settings.html" class="nav-item-dash" data-page="settings"><i class="fas fa-cog"></i> Settings</a>
             </div>
             <div id="navAdmin" style="display:none">
                 <a href="dashboard/adminOverview.html" class="nav-item-dash" data-page="adminOverview"><i class="fas fa-chart-line"></i> Analytics</a>
-                <a href="dashboard/manageFood.html" class="nav-item-dash" data-page="manageFood"><i class="fas fa-utensils"></i> Menu Management</a>
+                <a href="dashboard/manageFood.html" class="nav-item-dash" data-page="manageFood"><i class="fas fa-seedling"></i> Inventory</a>
                 <a href="dashboard/coupons.html" class="nav-item-dash" data-page="coupons"><i class="fas fa-ticket-alt"></i> Coupons & Promos</a>
                 <a href="dashboard/reports.html" class="nav-item-dash" data-page="reports"><i class="fas fa-file-invoice-dollar"></i> Business Reports</a>
-                <a href="dashboard/manageUsers.html" class="nav-item-dash" data-page="manageUsers"><i class="fas fa-users-cog"></i> User Management</a>
-                <p class="text-white-50">Account</p>
-                <a href="dashboard/profile.html" class="nav-item-dash" data-page="profile"><i class="fas fa-user"></i> Profile</a>
-                <a href="dashboard/settings.html" class="nav-item-dash" data-page="settings"><i class="fas fa-cog"></i> Settings</a>
             </div>
+
+            <p class="text-white-50 mt-4 px-3 mb-2">Account</p>
+            <a href="dashboard/profile.html" class="nav-item-dash" data-page="profile"><i class="fas fa-user-circle"></i> Profile</a>
+            <a href="dashboard/settings.html" class="nav-item-dash" data-page="settings"><i class="fas fa-cog"></i> Settings</a>
         </div>
     </div>
 
@@ -190,57 +182,6 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebar = document.getElementById('dashSidebar');
-            const toggleBtn = document.getElementById('sidebarToggle');
-            const overlay = document.getElementById('sidebarOverlay');
-            const dashFrame = document.getElementById('dashFrame');
-            const navItems = document.querySelectorAll('.nav-item-dash');
-            const signoutBtn = document.getElementById('signoutBtn');
-            const roleBadge = document.getElementById('roleBadge');
-
-            // Load User Data
-            const user = JSON.parse(localStorage.getItem('loggedInUser'));
-            if (user) {
-                document.getElementById('navUserName').textContent = user.name;
-                document.getElementById('navUserEmail').textContent = user.email;
-                document.getElementById('userAvatar').textContent = user.name.charAt(0).toUpperCase();
-                roleBadge.textContent = user.role;
-
-                // Show correct navigation based on role
-                document.getElementById('navFoodie').style.display = user.role === 'Foodie' ? 'block' : 'none';
-                document.getElementById('navDelivery').style.display = user.role === 'Delivery' ? 'block' : 'none';
-                document.getElementById('navAdmin').style.display = user.role === 'Admin' ? 'block' : 'none';
-            }
-
-            // Sidebar Toggle Logic
-            function toggleSidebar() {
-                sidebar.classList.toggle('active');
-                overlay.classList.toggle('active');
-            }
-
-            toggleBtn?.addEventListener('click', toggleSidebar);
-            overlay?.addEventListener('click', toggleSidebar);
-
-            // Iframe Navigation & Active States
-            navItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navItems.forEach(nav => nav.classList.remove('active'));
-                    this.classList.add('active');
-                    dashFrame.src = this.getAttribute('href');
-                    if (window.innerWidth < 992) toggleSidebar();
-                });
-            });
-
-            // Sign Out Logic
-            signoutBtn?.addEventListener('click', () => {
-                localStorage.removeItem('loggedInUser');
-                sessionStorage.removeItem('dashPage');
-                window.location.href = 'index.html';
-            });
-        });
-    </script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
