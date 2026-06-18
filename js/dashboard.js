@@ -110,15 +110,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-document.getElementById('sidebarToggle').addEventListener('click', () => {
-    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-});
-overlay.addEventListener('click', closeSidebar);
-
-// Pass user to iframe pages via postMessage when frame loads
-frame.addEventListener('load', () => {
-    try {
-        frame.contentWindow.postMessage({ type: 'DASH_USER', user }, '*');
-    } catch(e) {}
-});

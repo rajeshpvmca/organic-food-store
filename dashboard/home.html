@@ -12,38 +12,38 @@
         <div class="card-header-row">
             <div>
                 <h2 class="page-title">Welcome Back, <span id="userName">User</span>!</h2>
-                <p class="page-subtitle">Here's what's happening with your account today.</p>
+                <p class="page-subtitle">Your organic journey is making a difference. Here's your harvest summary.</p>
             </div>
-            <button class="btn-primary-dash">Download Report</button>
+            <button class="btn-primary-dash shadow-sm"><i class="fas fa-file-download me-2"></i>Download Report</button>
         </div>
 
         <div class="grid-4 mb-4">
             <div class="stat-card">
-                <div class="stat-icon green"><i class="fas fa-shopping-cart"></i></div>
+                <div class="stat-icon green"><i class="fas fa-leaf"></i></div>
                 <div>
                     <div class="stat-value">24</div>
-                    <div class="stat-label">Total Orders</div>
+                    <div class="stat-label">Organic Baskets</div>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon orange"><i class="fas fa-star"></i></div>
                 <div>
                     <div class="stat-value">4.8</div>
-                    <div class="stat-label">Average Rating</div>
+                    <div class="stat-label">Trust Score</div>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon blue"><i class="fas fa-wallet"></i></div>
                 <div>
-                    <div class="stat-value">$1,240</div>
-                    <div class="stat-label">Total Spent</div>
+                    <div class="stat-value">₹12,450</div>
+                    <div class="stat-label">Eco Savings</div>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon purple"><i class="fas fa-clock"></i></div>
+                <div class="stat-icon purple"><i class="fas fa-seedling"></i></div>
                 <div>
-                    <div class="stat-value">25m</div>
-                    <div class="stat-label">Avg. Delivery</div>
+                    <div class="stat-value">12kg</div>
+                    <div class="stat-label">Carbon Saved</div>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="row g-4">
             <div class="col-lg-8">
                 <div class="content-card">
-                    <h5 class="content-card-title">Order Analytics</h5>
+                    <h5 class="content-card-title">Consumption Trend</h5>
                     <canvas id="orderChart" height="150"></canvas>
                 </div>
             </div>
@@ -62,15 +62,15 @@
                         <li class="mb-3 d-flex gap-3">
                             <div class="status active"><i class="fas fa-check"></i></div>
                             <div>
-                                <div class="fw-bold small">Order Delivered</div>
-                                <div class="text-muted extra-small">Pizza Hut - #10293</div>
+                                <div class="fw-bold small">Harvest Delivered</div>
+                                <div class="text-muted extra-small">Green Valley Farm - #ORG-10293</div>
                             </div>
                         </li>
                         <li class="d-flex gap-3">
                             <div class="status pending"><i class="fas fa-sync"></i></div>
                             <div>
-                                <div class="fw-bold small">Out for Delivery</div>
-                                <div class="text-muted extra-small">Burger King - #10294</div>
+                                <div class="fw-bold small">Fresh Pickup</div>
+                                <div class="text-muted extra-small">Organic Orchards - #ORG-10294</div>
                             </div>
                         </li>
                     </ul>
@@ -94,12 +94,12 @@
             data: {
                 labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                 datasets: [{
-                    label: 'Orders',
+                    label: 'Fresh Produce (kg)',
                     data: [12, 19, 15, 25, 22, 30, 28],
-                    borderColor: '#ff4112',
+                    borderColor: '#416900',
                     tension: 0.4,
                     fill: true,
-                    backgroundColor: 'rgba(255, 65, 18, 0.05)'
+                    backgroundColor: 'rgba(65, 105, 0, 0.05)'
                 }]
             },
             options: { responsive: true, plugins: { legend: { display: false } } }

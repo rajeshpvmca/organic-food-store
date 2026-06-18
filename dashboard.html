@@ -16,7 +16,7 @@
 
         body {
             overflow: hidden; /* Prevent body scroll, use iframe/main scroll */
-            background-color: #f8fafb;
+            background-color: var(--background);
         }
 
         /* Sidebar Styling */
@@ -26,7 +26,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            background: #012d36;
+            background: var(--primary);
             z-index: 1050;
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
@@ -66,8 +66,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #fff;
-            border-bottom: 1px solid #edf2f7;
+            background: var(--surface-container-lowest);
+            border-bottom: 1px solid var(--outline-variant);
             flex-shrink: 0;
         }
 
@@ -117,7 +117,7 @@
                 width: 40px;
                 height: 40px;
                 border-radius: 8px;
-                background: #f1f5f9;
+                background: var(--surface-container-low);
             }
         }
 
@@ -164,7 +164,7 @@
     <div class="dash-main">
         <header class="dash-header">
             <button class="btn d-lg-none" id="sidebarToggle"><i class="fas fa-bars"></i></button>
-            <h5 class="mb-0 fw-bold">Dashboard <span class="badge bg-warning text-dark ms-2" id="roleBadge" style="font-size: 0.7rem;"></span></h5>
+            <h5 class="mb-0 fw-bold">Dashboard <span class="badge bg-accent text-white ms-2" id="roleBadge" style="font-size: 0.7rem;"></span></h5>
             <div class="d-flex align-items-center gap-3">
                 <div class="text-end d-none d-sm-block">
                     <div class="fw-bold small" id="navUserName">User Name</div>

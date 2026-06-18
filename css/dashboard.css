@@ -1,5 +1,5 @@
  :root { --sidebar-width: 280px; }
-        body { background: #f8fafb; min-height: 100vh; overflow-x: hidden; }
+        body { background: var(--background); min-height: 100vh; overflow-x: hidden; }
         
         /* Sidebar Styling */
         .dash-sidebar {
@@ -35,9 +35,9 @@
         .dash-main { margin-left: var(--sidebar-width); transition: all 0.3s; }
         .dash-header {
             padding: 1rem 2rem;
-            background: rgba(255,255,255,0.8);
+            background: var(--surface-container-lowest);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--outline-variant);
             display: flex;
             justify-content: space-between;
             align-items: center;

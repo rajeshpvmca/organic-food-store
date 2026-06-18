@@ -9,22 +9,22 @@
         .tracking-list { position: relative; padding-left: 45px; }
         .tracking-list::before {
             content: ''; position: absolute; left: 17px; top: 0; bottom: 0;
-            width: 2px; background: #e5e7eb;
+            width: 2px; background: var(--outline-variant);
         }
         .tracking-item { position: relative; padding-bottom: 2rem; }
         .tracking-icon {
             position: absolute; left: -45px; width: 36px; height: 36px;
-            background: #fff; border: 2px solid #e5e7eb; border-radius: 50%;
+            background: #fff; border: 2px solid var(--outline-variant); border-radius: 50%;
             display: flex; align-items: center; justify-content: center; z-index: 2;
         }
         .tracking-item.active .tracking-icon { background: var(--primary); border-color: var(--primary); color: #fff; }
-        .tracking-item.active .tracking-content h6 { color: var(--primary); }
+        .tracking-item.active .tracking-content h6 { color: var(--secondary); }
     </style>
 </head>
 <body>
     <div class="container-fluid py-4">
         <h2 class="page-title">Live Tracking</h2>
-        <p class="page-subtitle">Real-time status of your order #FOD-92840</p>
+        <p class="page-subtitle">Real-time status of your organic harvest #ORG-92840</p>
 
         <div class="row g-4">
             <div class="col-lg-7">
@@ -38,21 +38,21 @@
                             </div>
                         </div>
                         <div class="tracking-item active">
-                            <div class="tracking-icon"><i class="fas fa-utensils"></i></div>
+                            <div class="tracking-icon"><i class="fas fa-seedling"></i></div>
                             <div class="tracking-content">
-                                <h6 class="fw-bold mb-1">Preparing Your Meal</h6>
-                                <p class="small text-muted mb-0">The chef is working their magic.</p>
+                                <h6 class="fw-bold mb-1">Sorting Fresh Harvest</h6>
+                                <p class="small text-muted mb-0">Our farmers are selecting the best produce for you.</p>
                             </div>
                         </div>
                         <div class="tracking-item active">
-                            <div class="tracking-icon"><i class="fas fa-motorcycle"></i></div>
+                            <div class="tracking-icon"><i class="fas fa-truck"></i></div>
                             <div class="tracking-content">
                                 <h6 class="fw-bold mb-1">Out for Delivery</h6>
-                                <p class="small text-muted mb-0">Our rider <strong>Mike Swift</strong> is on the way.</p>
+                                <p class="small text-muted mb-0">Our partner <strong>Mike Swift</strong> is en route with your crate.</p>
                             </div>
                         </div>
                         <div class="tracking-item">
-                            <div class="tracking-icon"><i class="fas fa-home"></i></div>
+                            <div class="tracking-icon"><i class="fas fa-leaf"></i></div>
                             <div class="tracking-content">
                                 <h6 class="fw-bold mb-1">Delivered</h6>
                                 <p class="small text-muted mb-0">Estimated arrival in 10 mins.</p>
@@ -68,7 +68,7 @@
                     <h5 class="fw-bold">Mike Swift</h5>
                     <p class="text-muted small"><i class="fas fa-star text-warning"></i> 4.9 (2k+ Deliveries)</p>
                     <div class="d-flex gap-2 justify-content-center mt-3">
-                        <button class="btn-primary-dash"><i class="fas fa-phone me-2"></i>Call Rider</button>
+                        <button class="btn-primary-dash"><i class="fas fa-phone me-2"></i>Call Partner</button>
                         <button class="btn-outline-dash">Chat</button>
                     </div>
                 </div>
