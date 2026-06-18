@@ -191,6 +191,61 @@ body {
     color: var(--secondary) !important;
 }
 
+/* Responsive tweaks for the floating header */
+@media (max-width: 991px) {
+    .navbar.fixed-top {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        background: var(--surface-container-lowest) !important; 
+        padding: 10px 0;
+        border: none !important;
+    }
+
+    .navbar-collapse {
+        background: var(--surface-container-lowest);
+        position: fixed;
+        top: 70px; 
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        margin: 0;
+        padding: 40px 25px;
+        border-radius: 0;
+        border: none;
+        text-align: center;
+        overflow-y: auto;
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        opacity: 0;
+        visibility: hidden;
+        display: block !important; /* Overrides Bootstrap's display:none to allow transitions */
+    }
+
+        .navbar-collapse.show {
+            left: 0;
+            opacity: 1;
+            visibility: visible;
+    }
+
+    .navbar .nav-link {
+        padding: 18px 0;
+        font-size: 1.2rem;
+        border-bottom: 1px solid var(--outline-variant);
+    }
+
+    .navbar .nav-link.active::after {
+        display: none; /* Hide underline animation on mobile for better UI */
+    }
+
+    .thm-btn.ms-lg-3 {
+        margin-top: 15px;
+        margin-left: 0 !important;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .thm-btn {
     position: relative;
     display: inline-block;
