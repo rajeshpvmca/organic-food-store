@@ -64,25 +64,25 @@
                 <aside class="col-lg-3">
                     <div class="sticky-top" style="top: 100px;">
                         <!-- Search -->
-                        <div class="sidebar-widget mb-4" data-aos="fade-up">
+                        <div class="sidebar-widget mb-4" data-aos="fade-up" id="productSearchWidget">
                             <h4 class="font-headline-md text-primary mb-3">Search</h4>
-                            <div class="search-box position-relative">
-                                <input type="text" class="form-control rounded-pill px-4 py-2 border-outline-variant" placeholder="Find product...">
-                                <button class="btn text-primary position-absolute end-0 top-50 translate-middle-y me-2 border-0 bg-transparent">
+                            <form id="productSearchForm" class="search-box position-relative">
+                                <input type="text" id="productSearchInput" class="form-control rounded-pill px-4 py-2 border-outline-variant" placeholder="Find product...">
+                                <button type="submit" class="btn text-primary position-absolute end-0 top-50 translate-middle-y me-2 border-0 bg-transparent">
                                     <span class="material-symbols-outlined">search</span>
                                 </button>
-                            </div>
+                            </form>
                         </div>
 
                         <!-- Categories -->
                         <div class="sidebar-widget mb-4" data-aos="fade-up" data-aos-delay="100">
                             <h4 class="font-headline-md text-primary mb-3">Categories</h4>
                             <ul class="list-unstyled d-flex flex-column gap-2">
-                                <li><a href="#" class="cat-link active" data-filter="all">All Products <span>(48)</span></a></li>
-                                <li><a href="#" class="cat-link" data-filter="vegetables">Fresh Vegetables <span>(12)</span></a></li>
-                                <li><a href="#" class="cat-link" data-filter="fruits">Organic Fruits <span>(15)</span></a></li>
-                                <li><a href="#" class="cat-link" data-filter="dairy">Dairy & Eggs <span>(08)</span></a></li>
-                                <li><a href="#" class="cat-link" data-filter="spices">Natural Spices <span>(13)</span></a></li>
+                                <li><a href="#" class="cat-link active" data-filter="all">All Products <span id="count-all">(48)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="vegetables">Fresh Vegetables <span id="count-vegetables">(12)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="fruits">Organic Fruits <span id="count-fruits">(15)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="dairy">Dairy & Eggs <span id="count-dairy">(08)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="spices">Natural Spices <span id="count-spices">(13)</span></a></li>
                             </ul>
                         </div>
 
@@ -294,5 +294,66 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productSearchForm = document.getElementById('productSearchForm');
+            const productSearchInput = document.getElementById('productSearchInput');
+            const productCards = document.querySelectorAll('.product-card');
+            const categoryLinks = document.querySelectorAll('.cat-link');
+            const productGrid = document.querySelector('.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-4');
+
+            // Function to filter products
+            const filterProducts = (searchTerm = '', filterCategory = 'all') => {
+                let matches = 0;
+                productCards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    const cardCategory = card.closest('.col').getAttribute('data-category');
+                    const parentCol = card.closest('.col');
+
+                    const termMatch = searchTerm === '' || cardText.includes(searchTerm);
+                    const categoryMatch = filterCategory === 'all' || cardCategory === filterCategory;
+
+                    if (termMatch && categoryMatch) {
+                        parentCol.style.display = 'block';
+                        matches++;
+                    } else {
+                        parentCol.style.display = 'none';
+                    }
+                });
+
+                if (matches === 0 && searchTerm !== '') {
+                    window.location.href = '404.html';
+                }
+            };
+
+            // Handle search form submission
+            if (productSearchForm) {
+                productSearchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const searchTerm = productSearchInput.value.toLowerCase().trim();
+                    // Reset active category link when searching
+                    categoryLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector('.cat-link[data-filter="all"]').classList.add('active');
+                    filterProducts(searchTerm, 'all');
+                });
+            }
+
+            // Handle category link clicks
+            if (categoryLinks.length > 0) {
+                categoryLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const filter = link.getAttribute('data-filter');
+
+                        categoryLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+
+                        productSearchInput.value = ''; // Clear search input when filtering by category
+                        filterProducts('', filter);
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
