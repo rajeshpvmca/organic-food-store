@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loop: true,
             grabCursor: true,
             autoplay: {
-                delay: 5000,
+                delay: 3000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
