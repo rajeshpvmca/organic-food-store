@@ -50,3 +50,100 @@
         font-size: 2.5rem;
     }
 }
+
+/* Process Section Grand Styling */
+.process-section {
+    background: radial-gradient(circle at 0% 0%, rgba(21, 66, 18, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(249, 115, 22, 0.03) 0%, transparent 40%);
+    background-color: #fff;
+    position: relative;
+}
+
+.process-bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 400px !important;
+    color: var(--primary);
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.process-row {
+    position: relative;
+    z-index: 1;
+}
+
+/* Connecting Dotted Line for Desktop */
+@media (min-width: 992px) {
+    .process-row::before {
+        content: '';
+        position: absolute;
+        top: 45px; /* Half of icon height (90px) */
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: repeating-linear-gradient(to right, var(--outline-variant) 0, var(--outline-variant) 10px, transparent 10px, transparent 20px);
+        z-index: -1;
+    }
+}
+
+.process-card {
+    padding: 2rem 1.5rem;
+    height: 100%;
+    transition: all 0.4s ease;
+}
+
+.icon-wrap {
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    border: 2px solid var(--primary-fixed);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.step-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--secondary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(65, 105, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Hover Interactions */
+.process-card:hover .icon-wrap {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    transform: translateY(-5px) rotate(15deg) scale(1.1);
+    box-shadow: 0 15px 30px rgba(21, 66, 18, 0.15);
+}
+
+.process-card:hover .step-count {
+    background-color: var(--accent);
+    transform: scale(1.1) rotate(-15deg);
+}
+
+.process-card:hover h4 {
+    color: var(--secondary) !important;
+}
