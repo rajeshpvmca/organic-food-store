@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .wallet-card {
-            background: linear-gradient(135deg, #012d36 0%, #01414e 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
             color: white;
             border-radius: 20px;
             padding: 2rem;
@@ -15,7 +15,7 @@
             overflow: hidden;
         }
         .wallet-card::after {
-            content: '\f51e'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            content: '\f06c'; /* fa-leaf */ font-family: 'Font Awesome 6 Free'; font-weight: 900;
             position: absolute; right: -20px; bottom: -20px; font-size: 8rem; opacity: 0.1;
         }
     </style>
@@ -34,10 +34,10 @@
             <div class="col-md-5">
                 <div class="wallet-card shadow-lg">
                     <div class="small opacity-75 mb-1">Available Balance</div>
-                    <h1 class="display-5 fw-bold mb-4">$425.50</h1>
+                    <h1 class="display-5 fw-bold mb-4">₹4,250.50</h1>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="small"><i class="fas fa-shield-alt me-1"></i> Securely encrypted</span>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" height="15" style="filter: brightness(0) invert(1);">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" height="15" style="filter: brightness(0) invert(1) opacity(0.8);">
                     </div>
                 </div>
             </div>
@@ -45,12 +45,12 @@
                 <div class="content-card h-100">
                     <h5 class="content-card-title">Saved Payment Methods</h5>
                     <div class="d-flex align-items-center p-3 border rounded-3 mb-2">
-                        <i class="fab fa-cc-visa fs-2 me-3 text-primary"></i>
+                        <i class="fab fa-cc-visa fs-2 me-3 text-secondary"></i>
                         <div class="flex-grow-1">
                             <div class="fw-bold">Visa Card **** 4242</div>
                             <div class="small text-muted">Expires 12/26</div>
-                        </div>
-                        <span class="badge bg-light text-dark">Primary</span>
+                        </div> 
+                        <span class="badge bg-primary-fixed text-primary">Primary</span>
                     </div>
                 </div>
             </div>
@@ -72,9 +72,9 @@
                     <tbody>
                         <tr>
                             <td><span class="badge bg-soft-danger text-danger"><i class="fas fa-arrow-up"></i></span></td>
-                            <td>Order Payment - #FOD-92831</td>
+                            <td>Order Payment - #ORG-92831</td>
                             <td>Oct 28, 2023</td>
-                            <td class="fw-bold">-$45.00</td>
+                            <td class="fw-bold text-danger">-₹450.00</td>
                             <td><span class="status active">Success</span></td>
                         </tr>
                     </tbody>
