@@ -23,7 +23,7 @@
             border-radius: 12px;
             margin-bottom: 0.5rem;
             transition: all 0.2s;
-            white-space: nowrap; /* மெனுவை ஒரே வரியில் வைக்க */
+            white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
             display: flex;
@@ -64,7 +64,7 @@
         @media (max-width: 992px) {
             .dash-sidebar { 
                 transform: translateX(-100%); 
-                left: 0; /* JS-ல் 'active' கிளாஸ் பயன்படுத்தப்படுவதால் இதை சீரமைத்துள்ளேன் */
+                left: 0; 
             }
             .dash-sidebar.active { transform: translateX(0); }
             .dash-main { margin-left: 0; width: 100%; }

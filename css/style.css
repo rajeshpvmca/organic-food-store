@@ -212,7 +212,6 @@ body {
     box-shadow: 0 20px 40px rgba(21, 66, 18, 0.3);
 }
 
-/* அனிமேஷன் 1: மத்தியில் இருந்து நிறம் மாறுதல் (Half-way Fill) */
 .thm-btn::before {
     content: '';
     position: absolute;
@@ -255,7 +254,6 @@ body {
     width: 100%;
 }
 
-/* அனிமேஷன் 3: கீழே இருந்து மேல் நோக்கி நிறம் மாறுதல் */
 .btn-fill-top {
     position: relative;
     overflow: hidden;
