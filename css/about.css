@@ -40,15 +40,33 @@
     opacity: 0.05 !important;
 }
 
-/* Counter Styling */
-.bg-primary h3 {
-    font-size: 3.5rem;
+
+/* Stats Section Modern Styling */
+.stats-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 768px) {
-    .bg-primary h3 {
-        font-size: 2.5rem;
+@media (min-width: 992px) {
+    .stat-item:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
+}
+
+.stat-item h3 {
+    letter-spacing: -1px;
+}
+
+.stat-item .material-symbols-outlined {
+    display: block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-item:hover .material-symbols-outlined {
+    transform: translateY(-8px) scale(1.2);
+    opacity: 1 !important;
+    color: var(--accent) !important;
 }
 
 /* Process Section Grand Styling */
