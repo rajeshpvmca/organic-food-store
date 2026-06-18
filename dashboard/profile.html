@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dash-page.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { padding: 1.25rem; }
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 2.5rem 1.25rem;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 1.25rem;
+        }
+        .profile-avatar-lg {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.3);
+            border: 3px solid #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; font-weight: 700;
+            margin: 0 auto .75rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .profile-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+        .profile-role {
+            background: rgba(0,0,0,.15);
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 20px;
+            font-size: .75rem;
+            font-weight: 600;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: .9rem; }
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Profile</h1>
+    <p class="page-subtitle">View and update your personal information.</p>
+
+    <div class="profile-header">
+        <div class="profile-avatar-lg" id="profileAvatar">U</div>
+        <div class="profile-name" id="profileName">User Name</div>
+        <div class="profile-role" id="profileRole">Foodie</div>
+    </div>
+
+    <div class="content-card">
+        <div class="content-card-title">Personal Information</div>
+        <form onsubmit="saveProfile(event)">
+            <div class="form-row">
+                <div>
+                    <label class="form-label-dash">Full Name</label>
+                    <input type="text" class="form-ctrl" id="editName" placeholder="Full Name">
+                </div>
+                <div>
+                    <label class="form-label-dash">Email Address</label>
+                    <input type="email" class="form-ctrl" id="editEmail" placeholder="email@example.com" readonly style="background:#f1f5f9; cursor: not-allowed;">
+                </div>
+                <div>
+                    <label class="form-label-dash">Phone Number</label>
+                    <input type="tel" class="form-ctrl" placeholder="+1 (555) 000-0000">
+                </div>
+                <div>
+                    <label class="form-label-dash">Country</label>
+                    <input type="text" class="form-ctrl" placeholder="Your country">
+                </div>
+            </div>
+            <button type="submit" class="btn-primary-dash"><i class="fas fa-save me-2"></i>Save Changes</button>
+        </form>
+    </div>
+
+    <div class="content-card">
+        <div class="content-card-title">Change Password</div>
+        <div class="form-row">
+            <div>
+                <label class="form-label-dash">New Password</label>
+                <input type="password" class="form-ctrl" placeholder="New password">
+            </div>
+            <div>
+                <label class="form-label-dash">Confirm Password</label>
+                <input type="password" class="form-ctrl" placeholder="Confirm new password">
+            </div>
+        </div>
+        <button class="btn-outline-dash" style="margin-top:.5rem;">Update Password</button>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!user) window.location.href = '../404.html';
+        document.getElementById('profileAvatar').textContent = user.name.charAt(0).toUpperCase();
+        document.getElementById('profileName').textContent = user.name;
+        document.getElementById('profileRole').textContent = user.role;
+        document.getElementById('editName').value = user.name;
+        document.getElementById('editEmail').value = user.email;
+
+        function saveProfile(e) {
+            e.preventDefault();
+            const newName = document.getElementById('editName').value.trim();
+            if (newName) {
+                user.name = newName;
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+                document.getElementById('profileName').textContent = newName;
+                document.getElementById('profileAvatar').textContent = newName.charAt(0).toUpperCase();
+                alert('Profile updated!');
+            }
+        }
+    </script>
+</body>
+</html>

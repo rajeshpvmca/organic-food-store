@@ -1,0 +1,63 @@
+ :root { --sidebar-width: 280px; }
+        body { background: #f8fafb; min-height: 100vh; overflow-x: hidden; }
+        
+        /* Sidebar Styling */
+        .dash-sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            left: 0; top: 0;
+            background: var(--primary);
+            z-index: 1000;
+            transition: all 0.3s;
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+        .sidebar-header { padding: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .sidebar-nav { padding: 1.5rem; }
+        .nav-item-dash {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+        .nav-item-dash:hover, .nav-item-dash.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff !important;
+            border-left: 4px solid var(--accent);
+        }
+        .nav-item-dash i { width: 25px; font-size: 1.1rem; margin-right: 10px; }
+
+        /* Main Content */
+        .dash-main { margin-left: var(--sidebar-width); transition: all 0.3s; }
+        .dash-header {
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0; z-index: 999;
+        }
+        .user-avatar {
+            width: 40px; height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        iframe { width: 100%; height: calc(100vh - 75px); border: none; }
+
+        @media (max-width: 992px) {
+            .dash-sidebar { left: -100%; }
+            .dash-sidebar.open { left: 0; }
+            .dash-main { margin-left: 0; }
+        }

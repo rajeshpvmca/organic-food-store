@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dash-page.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { padding: 1.25rem; }
+        .toggle-row { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .85rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            gap: 1rem;
+        }
+        .toggle-row:last-child { border-bottom: none; }
+        .toggle-label h4 { font-size: .88rem; font-weight: 600; color: #1A2B48; margin: 0 0 2px; }
+        .toggle-label p  { font-size: .76rem; color: #6b7280; margin: 0; }
+        .switch { position:relative;display:inline-block;width:44px;height:24px;flex-shrink:0; }
+        .switch input { opacity:0;width:0;height:0; }
+        .slider { position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#e5e7eb;border-radius:24px;transition:.3s; }
+        .slider:before { position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s; }
+        input:checked + .slider { background: var(--primary); }
+        input:checked + .slider:before { transform: translateX(20px); }
+        .danger-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+        @media (max-width: 400px) {
+            .danger-btns { flex-direction: column; }
+            .danger-btns button { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Settings</h1>
+    <p class="page-subtitle">Manage your account preferences.</p>
+
+    <div class="content-card">
+        <div class="content-card-title">Notifications</div>
+        <div class="toggle-row">
+            <div class="toggle-label"><h4>Email Notifications</h4><p>Receive order and payment updates via email</p></div>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+        </div>
+        <div class="toggle-row">
+            <div class="toggle-label"><h4>Delivery Status</h4><p>Get real-time updates about your delivery status</p></div>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+        </div>
+        <div class="toggle-row">
+            <div class="toggle-label"><h4>Foodie Deals</h4><p>Receive exclusive discounts and gourmet offers</p></div>
+            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="content-card-title">Privacy</div>
+        <div class="toggle-row">
+            <div class="toggle-label"><h4>Public Profile</h4><p>Allow others to view your profile</p></div>
+            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+        </div>
+        <div class="toggle-row">
+            <div class="toggle-label"><h4>Two-Factor Authentication</h4><p>Extra security for your account</p></div>
+            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="content-card-title">Danger Zone</div>
+        <p style="font-size:.83rem;color:#6b7280;margin-bottom:1rem;">These actions are irreversible. Please proceed with caution.</p>
+        <div class="danger-btns">
+            <button class="btn-danger-dash"><i class="fas fa-ban me-2"></i>Deactivate Account</button>
+            <button class="btn-danger-dash" style="background:#fecdd3;color:#9f1239;"><i class="fas fa-trash me-2"></i>Delete Account</button>
+        </div>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (!user) window.location.href = '../404.html';
+    </script>
+</body>
+</html>
