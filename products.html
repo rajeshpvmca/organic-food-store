@@ -114,17 +114,17 @@
                 <main class="col-lg-9">
                     <!-- Toolbar -->
                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center bg-white p-3 rounded-2xl shadow-sm mb-4 border border-outline-variant" data-aos="fade-down">
-                        <p class="mb-0 font-label-md mb-2 mb-md-0">Showing 1–12 of 48 results</p>
+                        <p class="mb-0 font-label-md mb-2 mb-md-0" id="productCountText">Showing 6 of 6 results</p>
                         <div class="d-flex align-items-center gap-3">
-                            <select class="form-select border-0 shadow-none font-label-md text-primary" style="width: auto; cursor: pointer;">
+                            <select id="sortSelect" class="form-select border-0 shadow-none font-label-md text-primary" style="width: auto; cursor: pointer;">
                                 <option selected>Default Sorting</option>
-                                <option>Price: Low to High</option>
-                                <option>Price: High to Low</option>
-                                <option>Average Rating</option>
+                                <option value="low-high">Price: Low to High</option>
+                                <option value="high-low">Price: High to Low</option>
+                                <option value="rating">Average Rating</option>
                             </select>
                             <div class="d-flex gap-2 border-start ps-3 border-outline-variant">
-                                <button class="btn btn-sm text-primary p-0"><span class="material-symbols-outlined">grid_view</span></button>
-                                <button class="btn btn-sm p-0 opacity-50"><span class="material-symbols-outlined">view_list</span></button>
+                                <button id="gridViewBtn" class="btn btn-sm text-primary p-0"><span class="material-symbols-outlined">grid_view</span></button>
+                                <button id="listViewBtn" class="btn btn-sm p-0 opacity-50"><span class="material-symbols-outlined">view_list</span></button>
                             </div>
                         </div>
                     </div>
@@ -301,6 +301,11 @@
             const productCards = document.querySelectorAll('.product-card');
             const categoryLinks = document.querySelectorAll('.cat-link');
             const productGrid = document.querySelector('.row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-4');
+            const productCountText = document.getElementById('productCountText');
+            const sortSelect = document.getElementById('sortSelect');
+            const gridViewBtn = document.getElementById('gridViewBtn');
+            const listViewBtn = document.getElementById('listViewBtn');
+            const totalProducts = productCards.length;
 
             // Function to filter products
             const filterProducts = (searchTerm = '', filterCategory = 'all') => {
@@ -320,6 +325,9 @@
                         parentCol.style.display = 'none';
                     }
                 });
+
+                // Update count text
+                productCountText.textContent = `Showing ${matches} of ${totalProducts} results`;
 
                 if (matches === 0 && searchTerm !== '') {
                     window.location.href = '404.html';
@@ -353,6 +361,48 @@
                     });
                 });
             }
+
+            // Sorting logic
+            if (sortSelect) {
+                sortSelect.addEventListener('change', () => {
+                    const sortBy = sortSelect.value;
+                    const productsArray = Array.from(productGrid.children);
+
+                    productsArray.sort((a, b) => {
+                        const priceA = parseFloat(a.querySelector('.text-primary.fw-bold.fs-5').innerText.replace('$', ''));
+                        const priceB = parseFloat(b.querySelector('.text-primary.fw-bold.fs-5').innerText.replace('$', ''));
+                        const ratingA = a.querySelectorAll('.bi-star-fill').length;
+                        const ratingB = b.querySelectorAll('.bi-star-fill').length;
+
+                        if (sortBy === 'low-high') return priceA - priceB;
+                        if (sortBy === 'high-low') return priceB - priceA;
+                        if (sortBy === 'rating') return ratingB - ratingA;
+                        return 0;
+                    });
+
+                    productsArray.forEach(product => productGrid.appendChild(product));
+                });
+            }
+
+            // View toggle logic
+            if (gridViewBtn && listViewBtn) {
+                gridViewBtn.addEventListener('click', () => {
+                    productGrid.classList.remove('row-cols-1');
+                    productGrid.classList.add('row-cols-sm-2', 'row-cols-md-3');
+                    gridViewBtn.classList.add('text-primary'); gridViewBtn.classList.remove('opacity-50');
+                    listViewBtn.classList.add('opacity-50'); listViewBtn.classList.remove('text-primary');
+                });
+
+                listViewBtn.addEventListener('click', () => {
+                    productGrid.classList.add('row-cols-1');
+                    productGrid.classList.remove('row-cols-sm-2', 'row-cols-md-3');
+                    listViewBtn.classList.add('text-primary'); listViewBtn.classList.remove('opacity-50');
+                    gridViewBtn.classList.add('opacity-50'); gridViewBtn.classList.remove('text-primary');
+                });
+            }
+
+            // Initial count set
+            filterProducts('', 'all');
         });
     </script>
 </body>
