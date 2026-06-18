@@ -88,6 +88,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
+    // Product Category Filtering Logic
+    const categoryLinks = document.querySelectorAll('.cat-link');
+    const productItems = document.querySelectorAll('[data-category]');
+
+    if (categoryLinks.length > 0 && productItems.length > 0) {
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filter = link.getAttribute('data-filter');
+
+                // Toggle active class on links
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Filter items based on category
+                productItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+    
     // Counter Animation Logic
     const initCounters = () => {
         const counters = document.querySelectorAll('.counter-value');

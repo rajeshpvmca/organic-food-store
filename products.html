@@ -78,11 +78,11 @@
                         <div class="sidebar-widget mb-4" data-aos="fade-up" data-aos-delay="100">
                             <h4 class="font-headline-md text-primary mb-3">Categories</h4>
                             <ul class="list-unstyled d-flex flex-column gap-2">
-                                <li><a href="#" class="cat-link active">All Products <span>(48)</span></a></li>
-                                <li><a href="#" class="cat-link">Fresh Vegetables <span>(12)</span></a></li>
-                                <li><a href="#" class="cat-link">Organic Fruits <span>(15)</span></a></li>
-                                <li><a href="#" class="cat-link">Dairy & Eggs <span>(08)</span></a></li>
-                                <li><a href="#" class="cat-link">Natural Spices <span>(13)</span></a></li>
+                                <li><a href="#" class="cat-link active" data-filter="all">All Products <span>(48)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="vegetables">Fresh Vegetables <span>(12)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="fruits">Organic Fruits <span>(15)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="dairy">Dairy & Eggs <span>(08)</span></a></li>
+                                <li><a href="#" class="cat-link" data-filter="spices">Natural Spices <span>(13)</span></a></li>
                             </ul>
                         </div>
 
@@ -131,89 +131,141 @@
 
                     <!-- Grid -->
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                        <!-- Product 1 -->
-                        <div class="col" data-aos="fade-up">
+                        <!-- Product 1 (Bananas - HOT) -->
+                        <div class="col" data-aos="fade-up" data-category="fruits">
                             <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
                                 <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
                                     <img alt="Organic Bananas" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-1.webp" />
                                     <div class="product-actions">
-                                        <button class="action-btn" title="Add to Wishlist"><span class="material-symbols-outlined">favorite</span></button>
-                                        <button class="action-btn" title="Quick View"><span class="material-symbols-outlined">visibility</span></button>
+                                        <button class="action-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+                                        <button class="action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
                                     </div>
-                                    <span class="badge bg-accent position-absolute top-0 start-0 m-3 z-1">HOT</span>
                                 </div>
                                 <div class="px-2 flex-grow-1 text-center">
+                                    <span class="text-secondary font-label-sm text-uppercase fw-bold mb-1 d-block">Fresh Fruits</span>
+                                    <h3 class="font-headline-md text-primary mb-2">Organic Bananas</h3>
                                     <div class="text-warning mb-2 small">
                                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
                                     </div>
-                                    <h3 class="font-headline-md text-primary mb-1">Organic Bananas</h3>
-                                    <p class="text-secondary fw-bold mb-3">$4.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$6.00</span></p>
+                                    <p class="text-primary fw-bold mb-3 fs-5">$4.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$6.00</span></p>
                                 </div>
                                 <button class="thm-btn w-100 btn-fill-right mt-auto">
-                                    Add to cart <span class="material-symbols-outlined fs-6 ms-1">add_shopping_cart</span>
+                                    Add to cart <i class="bi bi-cart-plus ms-1"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Product 2 -->
-                        <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Product 2 (Potatoes - NEW) -->
+                        <div class="col" data-aos="fade-up" data-aos-delay="100" data-category="vegetables">
                             <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
                                 <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
                                     <img alt="Organic Potatoes" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-2.webp" />
                                     <div class="product-actions">
-                                        <button class="action-btn" title="Add to Wishlist"><span class="material-symbols-outlined">favorite</span></button>
-                                        <button class="action-btn" title="Quick View"><span class="material-symbols-outlined">visibility</span></button>
+                                        <button class="action-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+                                        <button class="action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
                                     </div>
                                 </div>
                                 <div class="px-2 flex-grow-1 text-center">
+                                    <span class="text-secondary font-label-sm text-uppercase fw-bold mb-1 d-block">Vegetables</span>
+                                    <h3 class="font-headline-md text-primary mb-2">Organic Potatoes</h3>
                                     <div class="text-warning mb-2 small">
                                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
                                     </div>
-                                    <h3 class="font-headline-md text-primary mb-1">Organic Potatoes</h3>
-                                    <p class="text-secondary fw-bold mb-3">$3.49 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$4.00</span></p>
+                                    <p class="text-primary fw-bold mb-3 fs-5">$3.49</p>
                                 </div>
                                 <button class="thm-btn w-100 btn-fill-right mt-auto">
-                                    Add to cart <span class="material-symbols-outlined fs-6 ms-1">add_shopping_cart</span>
+                                    Add to cart <i class="bi bi-cart-plus ms-1"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Product 3 -->
-                        <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Product 3 (Apples - SALE) -->
+                        <div class="col" data-aos="fade-up" data-aos-delay="200" data-category="fruits">
                             <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
                                 <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
                                     <img alt="Organic Apples" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-3.webp" />
                                     <div class="product-actions">
-                                        <button class="action-btn" title="Add to Wishlist"><span class="material-symbols-outlined">favorite</span></button>
-                                        <button class="action-btn" title="Quick View"><span class="material-symbols-outlined">visibility</span></button>
+                                        <button class="action-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+                                        <button class="action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
                                     </div>
-                                    <span class="badge bg-primary position-absolute top-0 start-0 m-3 z-1">SALE</span>
                                 </div>
                                 <div class="px-2 flex-grow-1 text-center">
+                                    <span class="text-secondary font-label-sm text-uppercase fw-bold mb-1 d-block">Fresh Fruits</span>
+                                    <h3 class="font-headline-md text-primary mb-2">Organic Apples</h3>
                                     <div class="text-warning mb-2 small">
                                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                                     </div>
-                                    <h3 class="font-headline-md text-primary mb-1">Organic Apples</h3>
-                                    <p class="text-secondary fw-bold mb-3">$5.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$7.50</span></p>
+                                    <p class="text-primary fw-bold mb-3 fs-5">$5.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$7.50</span></p>
                                 </div>
                                 <button class="thm-btn w-100 btn-fill-right mt-auto">
-                                    Add to cart <span class="material-symbols-outlined fs-6 ms-1">add_shopping_cart</span>
+                                    Add to cart <i class="bi bi-cart-plus ms-1"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Repeat for more content (Simulating many products) -->
-                        <!-- Using Category images as variety -->
-                        <div class="col" data-aos="fade-up">
-                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant h-100 d-flex flex-column hover-shadow-premium">
+                        <!-- Product 4 (Bell Peppers - HOT) -->
+                        <div class="col" data-aos="fade-up" data-category="vegetables">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
                                 <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
                                     <img alt="Fresh Bell Peppers" class="object-fit-cover transition-transform duration-500" src="./assets/images/categories-1.webp" />
+                                    <div class="product-actions">
+                                        <button class="action-btn"><i class="bi bi-heart"></i></button>
+                                        <button class="action-btn"><i class="bi bi-eye"></i></button>
+                                    </div>
                                 </div>
                                 <div class="px-2 flex-grow-1 text-center">
-                                    <h3 class="font-headline-md text-primary mb-1">Bell Peppers</h3>
-                                    <p class="text-secondary fw-bold mb-3">$2.99</p>
+                                    <span class="text-secondary font-label-sm text-uppercase fw-bold mb-1 d-block">Vegetables</span>
+                                    <h3 class="font-headline-md text-primary mb-2">Bell Peppers</h3>
+                                    <div class="text-warning mb-2 small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                    </div>
+                                    <p class="text-primary fw-bold mb-3 fs-5">$2.99</p>
                                 </div>
-                                <button class="thm-btn w-100 btn-fill-right">Add to cart</button>
+                                <button class="thm-btn w-100 btn-fill-right mt-auto">Add to cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 (Brown Bread - SALE) -->
+                        <div class="col" data-aos="fade-up" data-aos-delay="100" data-category="bakery">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
+                                <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
+                                    <img alt="Organic Brown Bread" class="object-fit-cover transition-transform duration-500" src="./assets/images/hot-product-5.webp" />
+                                    <div class="product-actions">
+                                        <button class="action-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+                                        <button class="action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="px-2 flex-grow-1 text-center">
+                                    <span class="text-secondary font-label-sm text-uppercase fw-bold mb-1 d-block">Bakery</span>
+                                    <h3 class="font-headline-md text-primary mb-2">Organic Brown Bread</h3>
+                                    <div class="text-warning mb-2 small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-primary fw-bold mb-3 fs-5">$3.99 <span class="text-muted text-decoration-line-through font-label-sm ms-2">$5.50</span></p>
+                                </div>
+                                <button class="thm-btn w-100 btn-fill-right mt-auto">Add to cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 (Spices - NEW) -->
+                        <div class="col" data-aos="fade-up" data-aos-delay="200" data-category="spices">
+                            <div class="product-card bg-white p-4 rounded-3xl shadow-sm border border-outline-variant hover-shadow-premium h-100 d-flex flex-column">
+                                <div class="position-relative ratio ratio-1x1 mb-4 overflow-hidden rounded-2xl group">
+                                    <img alt="Natural Spices" class="object-fit-cover transition-transform duration-500" src="./assets/images/categories-3.webp" />
+                                    <div class="product-actions">
+                                        <button class="action-btn" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
+                                        <button class="action-btn" title="Quick View"><i class="bi bi-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="px-2 flex-grow-1 text-center">
+                                    <span class="text-secondary font-label-sm text-uppercase fw-bold mb-1 d-block">Spices</span>
+                                    <h3 class="font-headline-md text-primary mb-2">Premium Chili Spices</h3>
+                                    <div class="text-warning mb-2 small">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-primary fw-bold mb-3 fs-5">$12.49</p>
+                                </div>
+                                <button class="thm-btn w-100 btn-fill-right mt-auto">Add to cart</button>
                             </div>
                         </div>
                     </div>
