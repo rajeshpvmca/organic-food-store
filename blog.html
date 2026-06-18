@@ -129,10 +129,10 @@
                         <!-- Search -->
                         <div class="bg-white p-4 rounded-3xl shadow-sm border border-outline-variant" data-aos="fade-left">
                             <h4 class="font-headline-md text-primary mb-4">Search News</h4>
-                            <div class="input-group">
-                                <input type="text" class="form-control border-end-0 rounded-start-pill px-4 py-3" style="background: var(--background);" placeholder="Keywords...">
-                                <button class="btn bg-primary text-white rounded-end-pill px-4 btn-fill-top"><i class="bi bi-search"></i></button>
-                            </div>
+                            <form id="blogSearchForm" class="input-group">
+                                <input type="text" id="blogSearchInput" class="form-control border-end-0 rounded-start-pill px-4 py-3" style="background: var(--background);" placeholder="Keywords...">
+                                <button type="submit" class="btn bg-primary text-white rounded-end-pill px-4 btn-fill-top"><i class="bi bi-search"></i></button>
+                            </form>
                         </div>
                         <!-- Categories -->
                         <div class="bg-white p-4 rounded-3xl shadow-sm border border-outline-variant" data-aos="fade-left" data-aos-delay="100">
@@ -177,5 +177,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchForm = document.getElementById('blogSearchForm');
+            const searchInput = document.getElementById('blogSearchInput');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            if (searchForm) {
+                searchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const term = searchInput.value.toLowerCase().trim();
+                    
+                    if (!term) {
+                        // Show all posts if search is empty
+                        blogCards.forEach(card => card.closest('.col-md-6').style.display = 'block');
+                        return;
+                    }
+
+                    let matches = 0;
+                    blogCards.forEach(card => {
+                        const text = card.textContent.toLowerCase();
+                        const parentCol = card.closest('.col-md-6');
+                        if (text.includes(term)) {
+                            parentCol.style.display = 'block';
+                            matches++;
+                        } else {
+                            parentCol.style.display = 'none';
+                        }
+                    });
+
+                    // If no blogs match the keyword, redirect to 404
+                    if (matches === 0) {
+                        window.location.href = '404.html';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
