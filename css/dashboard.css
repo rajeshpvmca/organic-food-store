@@ -70,3 +70,47 @@
             .dash-main { margin-left: 0; width: 100%; }
             .dash-header { padding: 1rem; }
         }
+
+
+        /* test */
+
+        /* Main Content */
+
+/* Left Side */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Dashboard + Customer */
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#roleBadge {
+    width: fit-content;
+    margin-top: 8px;
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+
+/* Mobile */
+@media (max-width: 992px) {
+
+    .header-left {
+        gap: 8px;
+    }
+
+    #roleBadge {
+        margin-top: 4px;
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+
+}
