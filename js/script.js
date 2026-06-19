@@ -1,7 +1,3 @@
-/**
- * Organic Food Store - Dynamic Component Loader
- */
-
 function loadComponent(id, file) {
     const element = document.getElementById(id);
     if (!element) return;
@@ -133,6 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         counters.forEach(counter => observer.observe(counter));
     };
+     // Preloader Logic
+    window.addEventListener('load', function() {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => preloader.remove(), 600);
+            }, 2500); // 2.5 seconds delay added here
+        }
+    });
 
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
